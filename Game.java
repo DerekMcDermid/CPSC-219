@@ -3,7 +3,7 @@ public class Game{
 
   public void play(){
     System.out.println("You are an individual ??? kill zombies");
-    Town.newInstance().startQuest(player);
+    Dungeon.newInstance().startQuest(player);
   }
 
   public static void main(String args[]){
