@@ -27,9 +27,66 @@ public class Fighters
     {
       return true;
     }
-    else()
+    else
     {
       return false;
     }
+  }
+  
+  public int getCurrentHP()
+  {
+    return currentHP;
+  }
+  
+  public void setCurrentHP(int hp)
+  {
+    if(currentHP >= maxHP - currentHP)
+    {
+      currentHP = maxHP;
+    }
+    else
+    {
+      currentHP = hp;
+    }
+  }
+  
+  public String getName()
+  {
+  return name;
+  }
+  
+  public String setName(name)
+  {
+    this.name = name;
+  }
+  
+  public String getRole()
+  {
+    return role;
+  }
+  
+  public void setRole(String role)
+  {
+    this.role = role;
+  }
+  
+  public int get MaxHP()
+  {
+    return maxHP;
+  }
+  
+  public int getLevel()
+  {
+    return level;
+  }
+  
+  public String status()
+  {
+    return name + " has " currentHP + "/" + maxHP + " HP."
+  }
+  
+  public String toString()
+  {
+    return name + " the " + role + " is level " + level + " with " + currentHP + "/" + maxHP + " HP and an attack of " + maxAttk + "-" + minAttk + ".";
   }
 }
