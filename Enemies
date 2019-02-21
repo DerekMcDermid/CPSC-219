@@ -24,12 +24,12 @@ public class Enemies
         } else if (i == 1) {
             return new Enemies("Feral Zombie");
         } else {
-            return new Enemy("Muscular Zombie");
+            return new Enemies("Muscular Zombie");
         }
     }
 
-    public static Enemy newBossInstance() {
-        return new Enemy("Mutated Zombie");
+    public static Enemies newBossInstance() {
+        return new Enemies("Mutated Zombie");
     }
 
     private Enemies(String name, String description, int hitPoints, int minDamage, int maxDamage) {
