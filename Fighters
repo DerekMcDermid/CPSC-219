@@ -1,4 +1,35 @@
 public class Fighters
 {
+  public String name;
+  public String role;
+  public int maxHP
+  public int maxAttk
+  public int minAttk
+  public int level
+  public int currentHP
   
+  public Fighters(String name, String role)
+  {
+    this.name = name;
+    this.role = role;
+  }
+  
+  public int attack(Creature other)
+  {
+    int attk = (int)(Math.random()*(this.maxAttk - this.minAttk) + this.minAttk);
+    currentHP -= attk;
+    return attk;
+  }
+  
+  public boolean isDead()
+  {
+    if (this.currentHP <=0)
+    {
+      return true;
+    }
+    else()
+    {
+      return false;
+    }
+  }
 }
