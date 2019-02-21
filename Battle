@@ -9,7 +9,7 @@ public class Battle {
 		System.out.println("Yikes! You have encountered" + zombie + ". " + zombie.getDescription() + "\n");
 		System.out.println("Battle with " + zombie + "starts )" + player.getStatus() + "/" + zombie.getStatus() + ")");
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		while (player.isDead() && zombie.isDead()) {
+		while (player.isAlive() && zombie.isAlive()) {
 			System.out.print("Attack (a) or heal (h)? ");
 			String action = in.readLine();
 			if (action.contentEquals("h")) {
