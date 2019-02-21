@@ -1,0 +1,69 @@
+import java.util.*;
+
+public final class Room{
+	
+	private final static int NUM_ROOMS = 7;
+	private final String description;
+	private final static Random chance = new Random();
+	private final boolean bossRoom;
+	private final static Set<Integer> roomsSeen = new HashSet<Integer>();
+
+	private Room(String description, Fighter zombie){
+		this.description = description;
+		this.fighter = fighter;
+	}
+
+	public status Room newRegularInstance(){
+		if (roomsSeen.size() == NUM_ROOMS) {
+			roomsSeen.clear();
+		}
+		int i;
+		do {
+			i = random.nextInt(NUM_ROOMS);
+		} while (roomsSeen.contains(i))
+		roomsSeen.add(i);
+
+		String roomDescription = null;
+		if (i == 0){
+			roomDescription = "Many doors fill the room ahead. Doors of varied shape, size, and design are set in every wall and even the ceiling and floor. Barely a hand's width lies between one door and the next. All the doors but the one you entered by are shut, and many have obvious locks."
+		} else if (i == 1){
+			roomDescription = "The door creaks open, which somewhat overshadows the sound of bubbling liquid. Before you is a room about which alchemists dream. Three tables bend beneath a clutter of bottles of liquid and connected glass piping. Several bookshelves stand nearby stuffed to overfilling with a jumble of books, jars, bottles, bags, and boxes. The alchemist who set this all up doesn't seem to be present, but a beaker of green fluid boils over a burner on one of the tables."
+		} else if (i == 2){ 
+			roomDescription = "You pull open the door and hear the scrape of its opening echo throughout what must be a massive room. Peering inside, you see a vast cavern. Stalactites drip down from the ceiling in sharp points while flowstone makes strange shapes on the floor."
+		} else if (i == 3){
+			roomDescription = "You peer into this room and spot the white orb of a skull lying on the floor. Suddenly a stone falls from the ceiling and smashes the skull to pieces. An instant later, another stone from the ceiling drops to strike the floor and shatter. You hear a low rumbling and cracking noise. "
+		} else if (i == 4){
+			roomDescription = "You poke your head through the break in the wall and look upon a room of titanic size. It is clearly an enormous mausoleum built to the proportions of giants. Huge niches are set into the walls within which you can discern giant bones. Stern-looking statues of stone giants stand 20 feet tall against the walls, and in the center of the room lies a 15-foot-long sarcophagus."
+		} else if (i == 5){
+			roomDescription = "You open the door to what must be a combat training room. Rough fighting circles are scratched into the surface of the floor. Wooden fighting dummies stand waiting for someone to attack them. A few punching bags hang from the ceiling. There's something peculiar about it all though. Every dummy is stocky and each has a bedraggled piece of leather hanging from its head that could be a long mask or a beard."
+		} else if (i == 6){ 
+			roomDescription = "You open the door to what must be a combat training room. Rough fighting circles are scratched into the surface of the floor. Wooden fighting dummies stand waiting for someone to attack them. A few punching bags hang from the ceiling. There's something peculiar about it all though. Every dummy is stocky and each has a bedraggled piece of leather hanging from its head that could be a long mask or a beard."
+		} else {
+		}
+		return new Room(roomDescription, Fighter.newRandomInstance(), false)
+	}
+
+	public static Room newBossInstance(){
+		return new Room("a huge cavern thick with the smell of sulfur", Monster.newBossInstance(), true);
+	}
+
+	public boolean isBossRoom(){
+		return bossRoom;
+	}
+
+	public boolean isComlete(){
+		return !zombie.isAlive();
+	}
+
+	@Override
+	public String toString(){
+		return description;
+	}
+
+	public void enter(Fighter zombie) throws IOException{
+		System.out.println(description);
+		if (zombie.isAlive()) {
+			new Battle(player, zombie);
+		}
+	}
+}
