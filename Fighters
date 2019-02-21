@@ -21,15 +21,15 @@ public class Fighters
     return attk;
   }
   
-  public boolean isDead()
+  public boolean isAlive()
   {
     if (this.currentHP <=0)
     {
-      return true;
+      return false;
     }
     else
     {
-      return false;
+      return true;
     }
   }
   
