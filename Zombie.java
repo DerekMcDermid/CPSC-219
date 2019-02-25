@@ -22,16 +22,16 @@ public final class Zombie {
         zombiesSeen.add(i);
 
         if (i == 0) {
-            return new Zombie("Harpy", 40, 8, 12);
+            return new Zombie("Zombie (Normal)", 40, 8, 12);
         } else if (i == 1) {
-            return new Zombie("Gargoyle", 26, 4, 6);
+            return new Zombie("Feral Zombie", 40, 12, 18);
         } else {
-            return new Zombie("Hobgoblin", 18, 1, 2);
+            return new Zombie("Muscular Zombie", 60, 10, 15);
         }
     }
 
     public static Zombie newBossInstance() {
-        return new Zombie("Dragon", 60, 10, 20);
+        return new Zombie("Mutated Zombie", 100, 10, 20);
     }
 
     private Zombie(String name, int hitPoints, int minDamage, int maxDamage) {
