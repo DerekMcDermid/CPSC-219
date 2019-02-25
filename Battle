@@ -1,29 +1,25 @@
-package Project;
+import java.util.*;
+import java.io.*;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+public final class Battle {
 
-public class Battle {
-	
-	public Battle(Fighters player, Fighters zombie) {
-		System.out.println("Yikes! You have encountered" + zombie + ". " + zombie.getDescription() + "\n");
-		System.out.println("Battle with " + zombie + "starts )" + player.getStatus() + "/" + zombie.getStatus() + ")");
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		while (player.isAlive() && zombie.isAlive()) {
-			System.out.print("Attack (a) or heal (h)? ");
-			String action = in.readLine();
-			if (action.contentEquals("h")) {
-				player.heal();
-			} else {
-				zombie.defend(player);
-			}
-			if (zombie.isAlive()) {
-				player.defend(zombie);
-			}
-			
-		}
-		
-	}
-
+    public Battle(Player player, Zombie zombie) throws IOException {
+        System.out.println("Yikes! You have enocuntered " + zombie + ": " + "\n");
+        System.out.println("Battle with " + zombie + " starts (" + player.getStatus() + " / "
+                + zombie.getStatus() + ")");
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        while (player.isAlive() && zombie.isAlive()) {
+            System.out.print("Attack (a) or heal (h)? ");
+            String action = in.readLine();
+            if (action.equals("h")) {
+                player.heal();
+            } else {
+                zombie.defend(player);
+            }
+            if (zombie.isAlive()) {
+                player.defend(zombie);
+            }
+        }
+    }
 
 }
