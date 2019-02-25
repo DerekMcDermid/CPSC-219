@@ -1,13 +1,18 @@
-public class Game{
-  private final Player player = new Player(); //check class.
+import java.util.*;
+import java.io.*;
 
-  public void play(){
-    System.out.println("You are an individual ??? kill zombies");
-    Dungeon.newInstance().startQuest(player);
-  }
+public final class Game {
 
-  public static void main(String args[]){
-    Game game = new Game();
-    game.play();
-  }
+    private final Player player = Player.newInstance();
+
+    public void play() throws IOException {
+        System.out.println("You are " + player + " " + player.getDescription());
+        Dungeon.newInstance().startQuest(player);
+    }
+
+    public static void main(String[] args) throws IOException {
+        Game game = new Game();
+        game.play();
+    }
+
 }
