@@ -51,7 +51,7 @@ public final class Room{
 		return bossRoom;
 	}
 
-	public boolean isComlete(){
+	public boolean isComplete(){
 		return !zombie.isAlive();
 	}
 
