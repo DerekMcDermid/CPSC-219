@@ -84,7 +84,7 @@ public final class Town {
         town.putRoom(0, 3, Room.newRegularInstance());
         town.putRoom(1, 3, Room.newRegularInstance());
         town.putRoom(0, 4, Room.newBossInstance());
-        town.currentRoom = town.getRoom(0, 0);
+        town.roomCurrent = town.getRoom(0, 0);
         return town;
     }
 
