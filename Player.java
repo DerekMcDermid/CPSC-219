@@ -40,10 +40,10 @@ public final class Player {
     public void heal() {
         if (numPotions > 0) {
             hitPoints = Math.min(maxHitPoints, hitPoints + 20);
-            System.out.printf("  %s drinks healing potion (%s, %d potions left)\n", name,
+            System.out.printf("  %s drinks healing potion (%s, %d Bandages left)\n", name,
                     getStatus(), --numPotions);
         } else {
-            System.out.println("  You've exhausted your potion supply!");
+            System.out.println(" You are out of Bandages!");
         }
     }
 
@@ -68,7 +68,7 @@ public final class Player {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("What is your character's name? ");
             String name = in.readLine();
-        System.out.print("Which class will your character be? Scout (high damage), Bruiser (High health), Survivalist (balanced)");
+        System.out.print("Which class will your character be? Scout (high damage), Bruiser (High health), Survivalist (balanced) ");
             String choice = in.readLine();
         if (choice.equals("Scout")){
             return new Player(name, "Scout description", 25, 15, 25, 6);
