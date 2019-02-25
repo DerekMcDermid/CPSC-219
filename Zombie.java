@@ -9,7 +9,7 @@ public final class Zombie {
     private final int maxDamage;
     private final static Random random = new Random();
     private final static Set<Integer> zombiesSeen = new HashSet<Integer>();
-    private final static int NUM_ZOMBIES = 3;
+    private final static int NUM_ZOMBIES = 6;
 
     public static Zombie newRandomInstance() {
         if (zombiesSeen.size() == NUM_ZOMBIES) {
@@ -22,16 +22,22 @@ public final class Zombie {
         zombiesSeen.add(i);
 
         if (i == 0) {
-            return new Zombie("Zombie (Normal)", 40, 8, 12);
+            return new Zombie("Creeper", 40, 8, 12);
         } else if (i == 1) {
-            return new Zombie("Feral Zombie", 40, 12, 18);
+            return new Zombie("Rotter", 26, 4, 6);
+        } else if (i == 2) {
+        	return new Zombie("Tainter", 30, 3, 5);
+        } else if (i == 3) {
+        	return new Zombie("Chubber", 35, 3, 5);
+        } else if (i == 4) {
+        	return new Zombie("Squirmer", 21, 3, 6);
         } else {
-            return new Zombie("Muscular Zombie", 60, 10, 15);
+            return new Zombie("Gnawer", 18, 1, 2);
         }
     }
 
     public static Zombie newBossInstance() {
-        return new Zombie("Mutated Zombie", 100, 10, 20);
+        return new Zombie("Dragon", 60, 10, 20);
     }
 
     private Zombie(String name, int hitPoints, int minDamage, int maxDamage) {
@@ -60,8 +66,8 @@ public final class Zombie {
         System.out.printf("  %s hits %s for %d HP of damage (%s)\n", player, name, attackStrength,
                 getStatus());
         if (hitPoints == 0) {
-            System.out.println("  " + player + " transforms " + name
-                    + " into a red and grey smear!");
+            System.out.println("  " + player + " transforms the skull of " + name
+                    + " into a red pancake with his stone hammer");
         }
     }
 
