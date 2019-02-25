@@ -60,8 +60,8 @@ public final class Zombie {
         System.out.printf("  %s hits %s for %d HP of damage (%s)\n", player, name, attackStrength,
                 getStatus());
         if (hitPoints == 0) {
-            System.out.println("  " + player + " transforms the skull of " + name
-                    + " into a red pancake with his stone hammer");
+            System.out.println("  " + player + " transforms " + name
+                    + " into a red and grey smear!");
         }
     }
 
