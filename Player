@@ -7,19 +7,19 @@ public final class Player {
     private final String description;
     private final int maxHitPoints;
     private int hitPoints;
-    private int numPotions;
+    private int numBandages;
     private final int minDamage;
     private final int maxDamage;
     private final Random random = new Random();
 
     private Player(String name, String description, int maxHitPoints, int minDamage, int maxDamage,
-            int numPotions) {
+            int numBandages) {
         this.name = name;
         this.description = description;
         this.maxHitPoints = maxHitPoints;
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
-        this.numPotions = numPotions;
+        this.numBandages = numBandages;
         this.hitPoints = maxHitPoints;
     }
 
@@ -27,8 +27,8 @@ public final class Player {
         return random.nextInt(maxDamage - minDamage + 1) + minDamage;
     }
 
-    public void defend(Monster monster) {
-        int attackStrength = monster.attack();
+    public void defend(Zombie zombie) {
+        int attackStrength = zombie.attack();
         hitPoints = (hitPoints > attackStrength) ? hitPoints - attackStrength : 0;
         System.out.printf("  " + name + " is hit for %d HP of damage (%s)\n", attackStrength,
                 getStatus());
@@ -38,12 +38,12 @@ public final class Player {
     }
 
     public void heal() {
-        if (numPotions > 0) {
-            hitPoints = Math.min(maxHitPoints, hitPoints + 20);
-            System.out.printf("  %s drinks healing potion (%s, %d potions left)\n", name,
+        if (numBandages > 0) {
+            hitPoints = Math.min(maxHitPoints, hitPoints + 30);
+            System.out.printf("  %s uses a Bandage (%s, %d bandages left)\n", name,
                     getStatus(), --numPotions);
         } else {
-            System.out.println("  You've exhausted your potion supply!");
+            System.out.println("  You've exhausted your supply of bandages!");
         }
     }
 
@@ -66,6 +66,6 @@ public final class Player {
 
     public static Player newInstance() {
         return new Player("Mighty Thor",
-                "a musclebound hulk intent on crushing all evil in his way", 40, 6, 20, 10);
+                "a musclebound hulk intent on crushing all zombies in his way", 40, 6, 20, 10);
     }
 }
