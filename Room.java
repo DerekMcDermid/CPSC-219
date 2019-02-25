@@ -34,7 +34,7 @@ public final class Room {
         } else if (i == 2) {
             roomDescription = "A stinking remant of what was once a city sewer. Ugh, hopefully this at least means the zombies won't be able to smell you.";
         } else if (i == 3) {
-            roomDescription = "An abandoned corprate office building. You find yourself wondering if there's still any in the break room, only to find that of course there is not. A shame, it's been forever since you've been able to enjoy the taste of your morning pick-me-up.";
+            roomDescription = "An abandoned corprate office building. You find yourself wondering if there's still any coffee in the break room, only to find that of course there is not. A shame, it's been forever since you've been able to enjoy the taste of your morning pick-me-up.";
         } else if (i == 4) {
             roomDescription =
                     "This was once a fast food joint. The chain it belongs to was actually your favourite. On an impulse, you check in the back to see if you can find anything edible. You find a burger!";
@@ -49,7 +49,7 @@ public final class Room {
     }
 
     public static Room newBossInstance() {
-        return new Room("When you step food into the building, the entire place screams LABORATORY to you. Hmm, you have the feeling that you'll either find something very useful in here, or the kind of thing that belongs in nightmares.", Zombie.newBossInstance(),
+        return new Room("When you step foot into the building, the entire place screams LABORATORY to you. Hmm, you have the feeling that you'll either find something very useful in here, or the kind of thing that belongs in nightmares.", Zombie.newBossInstance(),
                 true);
     }
 
