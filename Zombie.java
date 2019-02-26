@@ -63,11 +63,49 @@ public final class Zombie {
     public void defend(Player player) {
         int attackStrength = player.attack();
         hitPoints = (hitPoints > attackStrength) ? hitPoints - attackStrength : 0;
-        System.out.printf("  %s hits %s for %d HP of damage (%s)\n", player, name, attackStrength,
+        System.out.printf("    %s hits %s for %d HP of damage (%s)\n", player, name, attackStrength,
                 getStatus());
         if (hitPoints == 0) {
-            System.out.println("  " + player + " transforms the skull of " + name
-                    + " into a red pancake with his stone hammer");
+            int outcome = random.nextInt(3 - 1 + 1) + 1;
+            
+            if (player.getDescription() == "a hard hitting but lightly protected scout"){
+                if (outcome == 1){
+                    System.out.println("    " + player + " lands a direct shot on the " + name + " with their shotgun balsting it apart");
+                }
+                if (outcome == 2){
+                    System.out.println("    " + player + " hits the " + name + " with the butt end of their shotgun creating an audible crunch as inpacts");
+                }
+                if (outcome == 3){
+                    System.out.println("    " + player + " Shoots the " + name + " in the head destroying its skull ");
+                }
+            }
+
+            if (player.getDescription() == "a large brute capable of taking harder hits than you can give out"){
+                if (outcome == 1){
+                    System.out.println("    " + player + " kicks the " + name + "hard in the chest sending the" + name + "across the room");
+                }
+                if (outcome == 2){
+                    System.out.println("    " + player + " grabs the " + name + " and slams it onto the foor so hard that the boards crack beneath the zombie");
+                }
+                if (outcome == 3){
+                    System.out.println("    " + player + " kicksthe zombie's legs out causing the " + name + "to fall over then " + player + " Stomps on the zombie");
+                }
+            }
+
+            if (player.getDescription() == "a well rounded fighter"){
+                if (outcome == 1){
+                    System.out.println("    " + player + " swings their woodcutter's axe over their head then brings it down on the zombie's head");
+                }
+                if (outcome == 2){
+                    System.out.println("    " + player + " swings their axe hiting the " + name + "in the side and chopping it in half");
+                }
+                if (outcome == 3){
+                    System.out.println("    " + player + " hits the zombie in the jaw with the backside of their axe breifly launching it in the air"); 
+                }
+            }
+            if (player.getDescription() == "a musclebound hulk intent on crushing all evil in his way"){
+                System.out.println("    " + player + " incerates the zombie with a lightning strike");
+            }
         }
     }
 
