@@ -63,12 +63,13 @@ public final class Player {
     public String getDescription() {
         return description;
     }
-    
-    public static Player newInstance() throws IOException{
+
+    public static Player newInstance(){
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        try{
         System.out.print("What is your character's name? ");
             String name = in.readLine();
-        System.out.println("Which class will your character be? Scout (high damage), Bruiser (High health), Survivalist (balanced) ");
+        System.out.println("Which class will your character be? Scout (high damage), Bruiser (High health), or Survivalist (balanced)?");
             String choice = in.readLine();
         if (choice.equals("Scout")){
             return new Player(name, "Scout description", 25, 15, 25, 6);
@@ -78,7 +79,11 @@ public final class Player {
         }
         if (choice.equals("Survivalist")){
             return new Player(name, "Survivalist description", 40, 6, 17, 9);
-        } else return new Player("Mighty Thor",
-                "a musclebound hulk intent on crushing all evil in his way", 200, 100, 150, 200);
+        }
+      } catch (IOException e){
+          System.out.println("Something went wrong...");
+      }
+      return new Player("Mighty Thor",
+              "a musclebound hulk intent on crushing all evil in his way", 200, 100, 150, 200);
     }
 }
