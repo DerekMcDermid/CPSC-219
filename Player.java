@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.io.*;
 
@@ -7,19 +8,19 @@ public final class Player {
     private final String description;
     private final int maxHitPoints;
     private int hitPoints;
-    private int numPotions;
+    private int numBandages;
     private final int minDamage;
     private final int maxDamage;
     private final Random random = new Random();
 
     private Player(String name, String description, int maxHitPoints, int minDamage, int maxDamage,
-            int numPotions) {
+            int numBandages) {
         this.name = name;
         this.description = description;
         this.maxHitPoints = maxHitPoints;
         this.minDamage = minDamage;
         this.maxDamage = maxDamage;
-        this.numPotions = numPotions;
+        this.numBandages = numBandages;
         this.hitPoints = maxHitPoints;
     }
 
@@ -38,10 +39,10 @@ public final class Player {
     }
 
     public void heal() {
-        if (numPotions > 0) {
+        if (numBandages > 0) {
             hitPoints = Math.min(maxHitPoints, hitPoints + 20);
-            System.out.printf("  %s drinks healing potion (%s, %d Bandages left)\n", name,
-                    getStatus(), --numPotions);
+            System.out.printf("  %s applies healing bandage (%s, %d Bandages left)\n", name,
+                    getStatus(), --numBandages);
         } else {
             System.out.println(" You are out of Bandages!");
         }
