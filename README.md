@@ -17,9 +17,9 @@ Goal:
 Compiling and Running
 1. Use a computer with Java/JDK installed.
 2. Once installed, download all game files in the Game 2.0 branch, and unzip in a folder.
-3. Using the command line, change directories and compile all files.
-4. Enter <java Game> and the game will start.
+3. Using the command line, change to the directory containing the game files and compile all files.
+4. Enter **java Game** and the game will start.
 
 ## Contribution
 - Pull requests are welcome. For major changes, please notify team members first to discuss what you would like to change.
-- Before commiting, make sure the game runs properly and alert the team when making commits.
+- Before commiting, make sure the game compiles and runs properly and alert the team when making commits.
