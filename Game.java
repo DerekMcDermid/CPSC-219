@@ -3,7 +3,6 @@ import java.util.*;
 import java.io.*;
 
 public final class Game {
-
     private final Player player = Player.newInstance();
 
     public void play() throws IOException {
@@ -11,9 +10,12 @@ public final class Game {
         Town.newInstance().startQuest(player);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Game game = new Game();
-        game.play();
+        try{
+          game.play();
+        } catch (IOException e){
+            System.out.println("Something went wrong... please restart..");
+        }
     }
-
 }
