@@ -16,7 +16,7 @@ Goal:
 ## How to Play
 Compiling and Running
 1. Use a computer with Java/JDK installed.
-2. Once installed, download all game files, and unzip in a folder.
+2. Once installed, download all game files in the Game 2.0 branch, and unzip in a folder.
 3. Using the command line, change directories and compile all files.
 4. Enter <java Game> and the game will start.
 
