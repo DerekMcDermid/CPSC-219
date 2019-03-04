@@ -1,3 +1,4 @@
+package Project;
 import java.util.*;
 import java.io.*;
 public final class Town {
@@ -39,27 +40,27 @@ public final class Town {
         boolean westPossible = roomExists(currentX - 1, currentY);
         System.out.print("Where would you like to go :");
         if (northPossible) {
-            System.out.print(" North (n)");
+            System.out.print(" North (w)");
         }
         if (eastPossible) {
-            System.out.print(" East (e)");
+            System.out.print(" East (d)");
         }
         if (southPossible) {
             System.out.print(" South (s)");
         }
         if (westPossible) {
-            System.out.print(" West (w)");
+            System.out.print(" West (a)");
         }
-        System.out.print(" ? ");
+        System.out.print(" ? \n\n");
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         String direction = in.readLine();
-        if (direction.equals("n") && northPossible) {
+        if (direction.equals("w") && northPossible) {
             currentY++;
         } else if (direction.equals("s") && southPossible) {
             currentY--;
-        } else if (direction.equals("e") && eastPossible) {
+        } else if (direction.equals("d") && eastPossible) {
             currentX++;
-        } else if (direction.equals("w") && westPossible) {
+        } else if (direction.equals("a") && westPossible) {
             currentX--;
         }
         currentRoom = getRoom(currentX, currentY);
