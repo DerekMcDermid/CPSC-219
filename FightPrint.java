@@ -6,7 +6,7 @@ public class FightPrint{
   public static String printOutcome(int outcome, Player player, String name) {
     if (player.getDescription() == "the Scout"){
       if (outcome == 1){
-          System.out.println( player + " lands a direct shot on the " + name + " with their shotgun blasting it apart \n\n");
+          System.out.println(player + " lands a direct shot on the " + name + " with their shotgun blasting it apart \n\n");
       }
       if (outcome == 2){
           System.out.println(player + " hits the " + name + " with the butt end of their shotgun creating an audible crunch at impact\n\n");
