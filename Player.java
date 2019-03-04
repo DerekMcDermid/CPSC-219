@@ -70,16 +70,16 @@ public final class Player {
         try{
         System.out.print("What is your character's name? ");
             String name = in.readLine();
-        System.out.println("Which class will your character be? Scout (high damage), Bruiser (High health), or Survivalist (balanced)?");
+        System.out.println("Which class will your character be? Scout (high damage, low health and number of bandages), Bruiser (High health and number of bandages, low damage), or Survivalist (balanced)?");
             String choice = in.readLine();
         if (choice.equals("Scout")){
-            return new Player(name, "Scout description", 25, 15, 25, 6);
+            return new Player(name, "A glass cannon who can dish out a lot more damage to their foes than they can take themselves.", 25, 15, 25, 6);
         }
         if (choice.equals("Bruiser")){
-            return new Player(name, "Bruiser description", 65, 5, 12, 12);
+            return new Player(name, "A fistfighter who protects himself from the zombies with homemade armour, though this does hamer their physical abilities somewhat.", 65, 5, 12, 12);
         }
         if (choice.equals("Survivalist")){
-            return new Player(name, "Survivalist description", 40, 6, 17, 9);
+            return new Player(name, "A jack of all trades who values being able to kill the zombies they encounter, along with possessing the durability to survive them.", 40, 6, 17, 9);
         }
       } catch (IOException e){
           System.out.println("Something went wrong...");
