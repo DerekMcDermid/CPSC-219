@@ -64,7 +64,7 @@ public final class Zombie {
     public void defend(Player player) {
         int attackStrength = player.attack();
         hitPoints = (hitPoints > attackStrength) ? hitPoints - attackStrength : 0;
-        System.out.printf("    %s hits %s for %d HP of damage (%s)\n", player, name, attackStrength,
+        System.out.printf("%s hits %s for %d HP of damage (%s)\n", player, name, attackStrength,
                 getStatus());
         if (hitPoints == 0) {
             int outcome = random.nextInt(3 - 1 + 1) + 1;
