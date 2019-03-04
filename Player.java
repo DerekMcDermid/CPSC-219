@@ -70,7 +70,7 @@ public final class Player {
         try{
         System.out.print("What is your character's name? \n");
             String name = in.readLine();
-        System.out.println("Which class will your character be? Scout (high damage), Bruiser (high health), or Survivalist (balanced)?");
+        System.out.println("Which class will your character be? Scout (high damage, low health), Bruiser (low damage, high health), or Survivalist (balanced)?");
             String choice = in.readLine();
         if (choice.equals("Scout")){
             return new Player(name, "the Scout", 25, 15, 25, 6);
@@ -84,7 +84,7 @@ public final class Player {
       } catch (IOException e){
           System.out.println("Something went wrong...");
       }
-      return new Player("the Mighty Thor",
-              "a musclebound hulk intent on crushing all evil in his way", 200, 100, 150, 200);
+      return new Player("the Mighty Thor!",
+              "A musclebound hulk intent on crushing all evil that stands in his way!", 200, 100, 150, 200);
     }
 }
