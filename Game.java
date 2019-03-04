@@ -1,4 +1,3 @@
-
 import java.util.*;
 import java.io.*;
 
@@ -6,7 +5,7 @@ public final class Game {
     private final Player player = Player.newInstance();
 
     public void play() throws IOException {
-        System.out.println("You are " + player + " " + player.getDescription());
+        System.out.println("You are " + player + " " + player.getDescription() + "\n\n");
         Town.newInstance().startQuest(player);
     }
 
