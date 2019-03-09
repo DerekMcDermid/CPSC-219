@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
 
+//CITATION: https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java under "Battle Class" section
+
 public final class Battle {
 
     public Battle(Player player, Zombie zombie) throws IOException {
