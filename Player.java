@@ -2,6 +2,8 @@ package Project;
 import java.util.*;
 import java.io.*;
 
+
+//CITATION: https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java under the "pLAYER" CODE SECTION
 public final class Player {
 
     private final String name;
