@@ -1,6 +1,9 @@
 package Project;
 import java.util.*;
 import java.io.*;
+
+//CITATION: https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java under the "Dungeon class" code section
+
 public final class Town {
 
     private final Map<Integer, Map<Integer, Room>> map = new HashMap<Integer, Map<Integer, Room>>();
