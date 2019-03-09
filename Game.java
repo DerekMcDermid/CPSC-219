@@ -1,6 +1,8 @@
 import java.util.*;
 import java.io.*;
 
+//CITATION: https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java under the "Game" code section
+
 public final class Game {
     private final Player player = Player.newInstance();
 
