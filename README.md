@@ -23,3 +23,7 @@ Compiling and Running
 ## Contribution
 - Pull requests are welcome. For major changes, please notify team members first to discuss what you would like to change.
 - Before commiting, make sure the game compiles and runs properly and alert the team when making commits.
+
+## References
+-The code that we found online that was used heavily as a blueprint to beginning our team project is: 
+https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java
