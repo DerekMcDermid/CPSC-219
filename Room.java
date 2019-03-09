@@ -2,6 +2,8 @@ package Project;
 import java.util.*;
 import java.io.*;
 
+//CITATION: https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java under the "Room class" code section
+
 public final class Room {
 
     private final String description;
