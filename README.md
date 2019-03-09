@@ -25,5 +25,8 @@ Compiling and Running
 - Before commiting, make sure the game compiles and runs properly and alert the team when making commits.
 
 ## References
-- The code that we found online that was used heavily as a blueprint to beginning our team project is: 
-https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java
+- 6 of our classes; battle, zombie, player, room, game, and town classes are inspired by code posted on Stack Exchange
+- Article Name: Text-based RPG in Java
+- Author: User named Padawan 
+- Dated posted: March 13, 2012
+- Website: https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java 
