@@ -17,7 +17,7 @@ import javafx.scene.image.ImageView;
  
 //this code is inspired by the code written for individual assignment 5
 
-public class BattleApp extends Application 
+public class BattleApp extends Application
 {
 	
 	public static void main(String[] args)
@@ -33,11 +33,11 @@ public class BattleApp extends Application
 		HBox playerInfo = new HBox();
 
 		//add labels for all player information
-		Label playerName = new Label("Player Name:			" );
-		Label playerMinAttackVal = new Label ("Min Attack:			");
-		Label playerMaxAttackVal = new Label ("Max Attack:			");
-		Label playerHP = new Label ("HP:			");
-		Label playerBandage = new Label ("Bandages remaining:			");
+		Label playerName = new Label("Player Name:		   ");
+		Label playerMinAttackVal = new Label ("Min Attack:	   	   ");
+		Label playerMaxAttackVal = new Label ("Max Attack:		   ");
+		Label playerHP = new Label ("HP:		   ");
+		Label playerBandage = new Label ("Bandages remaining:		   ");
 
 		//retrieve all player information and add it to the label from HBox
 		playerInfo.getChildren().add(playerName);
@@ -48,26 +48,26 @@ public class BattleApp extends Application
 		root.getChildren().add(playerInfo);
 		
 		//create a blank vbox that adds a bunch of blank labels in order to make room in the middle of the window`
-	    VBox branchNodeBlank = new VBox();
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
-        branchNodeBlank.getChildren().add(new Label (""));
+	    	VBox branchNodeBlank = new VBox();
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
+        	branchNodeBlank.getChildren().add(new Label (""));
         
-        //add this hbox to the 'parent' vbox
+       		//add this hbox to the 'parent' vbox
         
-        root.getChildren().add(branchNodeBlank);
+        	root.getChildren().add(branchNodeBlank);
 
-        //create an hbox that has all zombie information laid out (horizontally)
+        	//create an hbox that has all zombie information laid out (horizontally)
 
 		HBox zombieInfo = new HBox();
 		playerInfo.getChildren().add(zombieInfo);
@@ -99,9 +99,9 @@ public class BattleApp extends Application
 		//code used to center the buttons
 		
 		attackHealButton.setMaxWidth(Double.MAX_VALUE);
-	    AnchorPane.setLeftAnchor(attackHealButton, 0.0);
-	    AnchorPane.setRightAnchor(attackHealButton, 0.0);
-	    attackHealButton.setAlignment(Pos.CENTER);
+	    	AnchorPane.setLeftAnchor(attackHealButton, 0.0);
+	    	AnchorPane.setRightAnchor(attackHealButton, 0.0);
+	    	attackHealButton.setAlignment(Pos.CENTER);
 
 		Button heal = new Button("Heal");
 		attackHealButton.getChildren().add(heal);
@@ -120,4 +120,6 @@ public class BattleApp extends Application
 
 
 }
+
+
 
