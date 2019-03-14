@@ -8,8 +8,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
- * Following code is based off of Jewelsea's charactermovemnt
- * Hold down an arrow key to have your hero move around the screen.
+ * Following code is based off of Jewelsea's character movemnt
+ * Hold down one of the WASD keys to have your hero move around the screen.
  * Hold down the shift key to have the hero run.
  */
 public class CharacterMovement extends Application {
@@ -138,7 +138,7 @@ public class CharacterMovement extends Application {
         moveHeroTo(x, y);
     }
 
-    // Does not allow the hero to move out of the window
+    // Does not allow the hero to move out of the window, and determines the direction in which the hero moves
     private void moveHeroTo(double x, double y) {
         final double cx = hero.getBoundsInLocal().getWidth()  / 2;
         final double cy = hero.getBoundsInLocal().getHeight() / 2;
