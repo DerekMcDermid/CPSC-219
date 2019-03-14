@@ -30,3 +30,5 @@ Compiling and Running
 - Author: User named Padawan 
 - Dated posted: March 13, 2012
 - Website: https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java 
+
+- Class BattleApp was inspired by the work done to complete the individual assingment 5
