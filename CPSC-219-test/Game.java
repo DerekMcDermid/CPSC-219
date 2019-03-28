@@ -134,20 +134,26 @@ public class Game extends Application {
         // image
         Image image = zombieImage;
 
-        // random speed
-        double speedY = rnd.nextDouble() * 1.0 + 2.0;
-
         int temp = rnd.nextInt(2 - 1 + 1) +1;
 
-        double speedX = 1.0;
+        // random speed
+        double speedY = 1.0;
         if (temp > 1){
+            speedY = -1.0;
+        }
+
+
+        int temp1 = rnd.nextInt(2 - 1 + 1) +1;
+
+        double speedX = 1.0;
+        if (temp1 > 1){
             speedX = -1.0;
         }
 
         // x position range: zombie is always fully inside the screen, no part of it is outside
         // y position: right on top of the view, so that it becomes visible with the next game iteration
         double x = rnd.nextDouble() * (Settings.SCENE_WIDTH - image.getWidth());
-        double y = -image.getHeight();
+        double y = rnd.nextDouble() * (Settings.SCENE_WIDTH -image.getHeight());
 
         // create a sprite
         Zombie zombie = new Zombie(playfieldLayer, image, x, y, speedX, speedY, 1,1);
@@ -188,10 +194,9 @@ public class Game extends Application {
                     collision = true;
                     if(collision = true){
                         System.out.println("COLLISION");
-                        System.exit(0);
+                        zombie.kill();
                         collision = false;
                     }
-                  
                 }
             }
         }
