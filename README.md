@@ -32,12 +32,20 @@ Compiling and Running
 - Website: https://codereview.stackexchange.com/questions/9999/text-based-rpg-in-java 
 - https://gist.github.com/jewelsea/8321740
 
+
+
 - Class BattleApp was inspired by the work done to complete the individual assignment 5
+
+
 
 - All code for constructing the main menu of our game was inspired by a series of youtube tutorials
 - Website: https://www.youtube.com/watch?v=6BKI26gxK2Q&t=23s
 - Author: javacraving
 
+
+
 - .png images for character and character movement, along with all shapes for buttons were downloaded from the following website: https://kenney.nl/assets/platformer-characters-1
+
+
 
 - Menu background image obtained from http://www.fanpop.com/clubs/once-upon-a-zombie/images/36574221/title/wallpaper-zombie-wallpaper
