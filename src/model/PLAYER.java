@@ -1,5 +1,5 @@
 package model;
-
+//All code for constructing the main menu of our game was inspired by a series of youtube tutorials Website: https://www.youtube.com/watch?v=6BKI26gxK2Q&t=23s Author: javacraving
 //the enum type stores a url for each player image
 
 public enum PLAYER {
