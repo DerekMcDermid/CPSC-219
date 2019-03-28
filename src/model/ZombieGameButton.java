@@ -10,6 +10,8 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Font;
 
+//All code for constructing the main menu of our game was inspired by a series of youtube tutorials Website: https://www.youtube.com/watch?v=6BKI26gxK2Q&t=23s Author: javacraving
+
 public class ZombieGameButton extends Button {
  //create a constant variable for the path of our font and one to define a style for our buttons when they are pressed and released
 	private final String FONT_PATH = "src/model/resources/kenvector_future.ttf";
