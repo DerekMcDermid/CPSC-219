@@ -6,17 +6,17 @@ Authors:
 - Alhedo Goc
 
 ## Project Information
-This project is a single player zombie adventure RPG. You reside in a town that has been invaded by a sudden influx of zombies!
+This project is a single player zombie survival game. You reside in a town that has been invaded by a sudden influx of zombies!
 As you scavenge for resources such as weapons and health supplies, you must defend yourself from the flesh eating creatures that
 are hidden amoung the many buildings in town. 
 
 Goal:
-- Survive as many encounters with zombies as you can.
+- Kill zombies to get your score as high as you can, while making sure they do not kill you.
 
 ## How to Play
 Compiling and Running
 1. Use a computer with Java/JDK installed.
-2. Once installed, download all game files in the Game 2.0 branch, and unzip in a folder.
+2. Once installed, download all game files in the GUI branch, and unzip in a folder.
 3. Using the command line, change to the directory containing the game files and compile all files.
 4. Enter **java Game** and the game will start.
 
