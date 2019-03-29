@@ -1,3 +1,4 @@
+// Class based from: https://stackoverflow.com/questions/29057870/in-javafx-how-do-i-move-a-sprite-across-the-screen 
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 
