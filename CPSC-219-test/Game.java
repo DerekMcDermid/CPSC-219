@@ -1,3 +1,4 @@
+//Class based on https://stackoverflow.com/questions/30044870/tower-defense-game-moving-the-enemies-on-the-screen under 'Game'
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -183,6 +184,7 @@ public class Game extends Application {
 
     /*
      * Checks for collisions between sprites.
+     * Method based on https://stackoverflow.com/questions/7925067/how-to-disappear-the-image-when-there-is-a-collision
      */
     private void checkCollisions() {
 
