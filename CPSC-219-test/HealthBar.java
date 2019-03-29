@@ -1,3 +1,5 @@
+//class based off of 'HealthBar' from https://stackoverflow.com/questions/30044870/tower-defense-game-moving-the-enemies-on-the-screen
+
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
