@@ -1,3 +1,5 @@
+//based off of 'input' from https://stackoverflow.com/questions/29057870/in-javafx-how-do-i-move-a-sprite-across-the-screen
+
 import java.util.BitSet;
 
 import javafx.event.EventHandler;
@@ -14,7 +16,6 @@ public class Input {
 
     // -------------------------------------------------
     // default key codes
-    // will vary when you let the user customize the key codes or when you add support for a 2nd player
     // -------------------------------------------------
 
     private KeyCode upKey = KeyCode.UP;
