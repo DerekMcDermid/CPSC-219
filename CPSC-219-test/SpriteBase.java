@@ -1,3 +1,6 @@
+//Class based off of: https://stackoverflow.com/questions/29057870/in-javafx-how-do-i-move-a-sprite-across-the-screen, as
+//well as https://stackoverflow.com/questions/35472233/load-a-sprites-image-in-java
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
