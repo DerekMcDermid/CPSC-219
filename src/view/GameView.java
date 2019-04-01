@@ -1,5 +1,11 @@
 package view;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -7,8 +13,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.PLAYER;
+
 
 public class GameView {
  //create a separate stage, scene and pane for our game view
@@ -18,8 +26,9 @@ public class GameView {
 	
 	//define stage width and height
 	
-	private static final int GAME_WIDTH = 600;
+	private static final int GAME_WIDTH = 900;
 	private static final int GAME_HEIGHT = 800;
+
 	
 	//create a field for menu stage and image view for ship
 	private Stage menuStage;
@@ -30,12 +39,27 @@ public class GameView {
 	 private boolean isRightKeyPressed;
 	 private boolean isUpKeyPressed;
 	 private boolean isDownKeyPressed;
+	 private int angle;
 	 private AnimationTimer gameTimer;
+	 
+	 //create a grid pane that will allow us to store our small image as the entire background
+	 private GridPane gridPane1;
+	 private GridPane gridPane2;
+	 
+	 //private string for background image URL
+	 private final static String BACKGROUND_IMAGE = "view/resources/grass2.png";
+	 
+	 private final static String ZOMBIE_IMAGE = "view/resources/zoimbie1_hold.png";
+	 
+	 private ImageView[] zombie;
+	 
+	 Random randomPositionGenerator;
 	 
 	//define constructor
 	public GameView() {
 		InitializeStage();
 		createKeyListeners();
+		randomPositionGenerator = new Random();
 	}
 	//create key listeners to see which keys are pressed or released
 
@@ -93,7 +117,9 @@ public class GameView {
 	public void createNewGame(Stage menuStage, PLAYER chosenPlayer) {
 		this.menuStage = menuStage;
 		this.menuStage.hide();
+		createBackground();
 		createPlayer(chosenPlayer);
+		createGameLoop();
 		gameStage.show();
 	}
 	
@@ -105,6 +131,63 @@ public class GameView {
 		gamePane.getChildren().add(player);
 	}
 	
+	private void createGameLoop() {
+		gameTimer = new AnimationTimer() {
+
+			@Override
+			public void handle(long now) {
+				movePlayer();
+				
+			}
+			
+		};
+		
+		gameTimer.start();
+	}
 	
+	private void movePlayer() {
+		if(isLeftKeyPressed && !isRightKeyPressed) {
+		//		angle -= 5;
+		//		player.setRotate(angle);
+			if(player.getLayoutX() > -20) {
+				player.setLayoutX(player.getLayoutX() -4);
+			}
+		}
+			
+		if(isRightKeyPressed && !isLeftKeyPressed) {
+		//		angle +=5;
+		//		player.setRotate(angle);
+			if(player.getLayoutX() < 859) {
+			player.setLayoutX(player.getLayoutX() +4);
+			}
+		}
+		
+		if(isUpKeyPressed) {
+			if(player.getLayoutY() >0)
+			player.setLayoutY(player.getLayoutY() -4);
+		}
+		if(isDownKeyPressed) {
+			if(player.getLayoutY() <760)
+			player.setLayoutY(player.getLayoutY() +4);
+		}
+	}
 	
+	//method that will create background 
+	private void createBackground() {
+		gridPane1 = new GridPane();
+		gridPane2 = new GridPane();
+		//each grid pane will contain 12 images to cover entire background 
+		for(int i = 0; i < 12; i++) {
+			ImageView backgroundImage1 = new ImageView(BACKGROUND_IMAGE);
+			ImageView backgroundImage2 = new ImageView(BACKGROUND_IMAGE);
+			GridPane.setConstraints(backgroundImage1, i% 3, i / 3);
+			GridPane.setConstraints(backgroundImage2, i% 3, i / 3);
+			gridPane1.getChildren().add(backgroundImage1);
+			gridPane2.getChildren().add(backgroundImage2);
+			}
+		
+		gridPane2.setLayoutY(-1024);
+		gamePane.getChildren().addAll(gridPane1, gridPane2);
+	}
 }
+	
