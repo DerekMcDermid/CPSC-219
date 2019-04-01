@@ -1,0 +1,95 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.ArrayList;
+
+import javax.swing.JPanel;
+
+public class Screen extends JPanel implements Runnable {
+   Thread thread = new Thread(this);
+
+   public static Ball ball;
+   public static Player player;
+   public static Control control;
+   public static Bullet bullet;
+   public static ArrayList<Bullet> bulletArray;
+
+   public static boolean isFirst = true;
+
+   public static int screenWidth, screenHeight, screenX, screenY, numBullet;
+
+   public Screen() {
+      define();
+      thread.start();
+      this.addKeyListener(control);
+      this.setFocusable(true);
+   }
+
+   public void define() {
+      control = new Control();
+      ball = new Ball(ball.x, ball.y, ball.height, ball.width);
+      player = new Player(player.x, player.y, player.width, player.height,
+            player.speed);
+
+      screenWidth = this.getWidth();
+      screenHeight = this.getHeight();
+
+      bulletArray = new ArrayList<Bullet>();
+
+      bullet = new Bullet(0, 0, 50, 50);
+
+   }
+
+   public void paintComponent(Graphics g) {
+
+      if (isFirst) {
+         define();
+      }
+      // drawing the background
+      g.setColor(new Color(0, 0, 0));
+      g.fillRect(screenX, 0, screenWidth, screenHeight);
+
+      // drawing the ball
+      g.setColor(new Color(250, 50, 0));
+      ball.move(ball.x, ball.y);
+      ball.draw(g);
+
+      // player
+      g.setColor(new Color(255, 255, 255));
+      player.draw(g);
+      player.move();
+
+      // creating bullets
+      if (control.shoot) {
+         numBullet++;
+      }
+
+      for (int i = 0; i < numBullet; i++) {
+         bullet = new Bullet(player.x, bullet.y, 5, 5);
+         bulletArray.add(bullet);
+
+         bulletArray.get(i).draw(g);
+         bulletArray.get(i).move(bullet.speed);
+      }
+
+   }
+
+   public void run() {
+
+      while (true) {
+
+         if (!isFirst) {
+
+         }
+
+         repaint();
+
+         try {
+
+            Thread.sleep(5);
+         } catch (InterruptedException e) {
+            e.printStackTrace();
+         }
+      }
+   }
+
+}
