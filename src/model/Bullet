@@ -8,13 +8,13 @@ public class Bullet {
     private int x;
     private int y;
     private int angle;
-    private int effectivity;
+    private int damage;
     
-    public Bullet(int x, int y, int angle, int effectivity) {
+    public Bullet(int x, int y, int angle, int damage) {
         this.x = x;
         this.y = y;
         this.angle = angle;
-        this.effectivity = effectivity;
+        this.damage = damage;
     }
 
     /**
@@ -63,12 +63,12 @@ public class Bullet {
     }
 
     /**
-    * Method returns bullet's effectivity
+    * Method returns bullet's damage
     * 
-    * @return bullet's effectivity
+    * @return bullet's damage
     */
-    public int getEffectivity() {
-        return effectivity;
+    public int getDamagey() {
+        return damage;
     }
     
 }
