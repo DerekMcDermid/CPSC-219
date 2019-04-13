@@ -18,6 +18,8 @@ This project is a single player zombie adventure RPG. You reside in a town that 
   javac -cp .;junit-4.12.jar;hamcrest-core-1.3.jar *.java for **Windows**, or <br />
   javac -cp .:junit-4.12.jar:hamcrest-core-1.3.jar *.java for **Linux**.<br />
   4. Enter **java Game** and the game will start.
+  **OR**
+  Simply open the file in Eclipse, select the **Game** file, and run as a Java Application.
   
   **For GUI:** <br />
   Open the file in Eclipse, select the **Main** file, and run as a Java Application.
