@@ -10,12 +10,18 @@ This project is a single player zombie adventure RPG. You reside in a town that 
 
 
 ## How to Play
-Compiling and Running
-1. Use a computer with Java/JDK installed.
-2. Once installed, download all game files in the FINAL branch, and unzip in a folder.
-3. Using the command line, change to the directory containing the game files and compile all files.
-4. Enter **java Game** and the game will start.
-
+**Compiling and Running**<br />
+  For **textbased**, console version: <br />
+  1. Use a computer with Java/JDK installed.
+  2. Once installed, download all game files in the FINAL branch, and unzip in a folder.
+  3. Using the command line, change to the directory 'textbased' and compile all the files using the command: <br />
+  javac -cp .;junit-4.12.jar;hamcrest-core-1.3.jar *.java for **Windows**, or <br />
+  javac -cp .:junit-4.12.jar:hamcrest-core-1.3.jar *.java for **Linux**.<br />
+  4. Enter **java Game** and the game will start.
+  
+  **For GUI:** <br />
+  Open the file in Eclipse, select the **Main** file, and run as a Java Application.
+  
 ## Contribution
 - Pull requests are welcome. For major changes, please notify team members first to discuss what you would like to change.
 - Before commiting, make sure the game compiles and runs properly and alert the team when making commits.
